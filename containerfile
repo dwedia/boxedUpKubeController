@@ -12,6 +12,9 @@ RUN curl -sL https://talos.dev/install | sh
 
 RUN mkdir -p /kubecontrol/configs
 
+ENV KUBECONFIG=/kubecontrol/configs/kubeconfig
+ENV TALOSCONFIG=/kubecontrol/configs/talosconfig
+
 WORKDIR /kubecontrol
 
 STOPSIGNAL sigkill

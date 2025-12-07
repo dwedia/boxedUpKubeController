@@ -2,12 +2,12 @@ version: '3.8' # Use a modern version like 3.8
 
 services:
   kubecontrol:
-    image: localhost/kubecontroller:v0.7
+    image: localhost/boxedupkubecontroller
     container_name: kubecontroller
     
     # Defines the volume bind mount. talosctl config file and kubeconfig files should be placed in here.
     volumes:
-      - ./configfolder:/kubecontrol/configs:Z
+      - ./configs:/kubecontrol/configs:Z
     
     # Replaces the '-it' flags (interactive and TTY allocation)
     # Allows you to interact with the container's shell
