@@ -12,11 +12,14 @@ RUN curl -sL https://talos.dev/install | sh
 
 RUN mkdir -p /kubecontrol/configs
 
-ENV KUBECONFIG=/kubecontrol/configs/kubeconfig
-ENV TALOSCONFIG=/kubecontrol/configs/talosconfig
+#ENV KUBECONFIG=/kubecontrol/configs/kubeconfig
+#ENV TALOSCONFIG=/kubecontrol/configs/talosconfig
+
+COPY files/.bashrc /root/.bashrc
 
 WORKDIR /kubecontrol
 
 STOPSIGNAL sigkill
 
-ENTRYPOINT bash
+#ENTRYPOINT ["/kubecontrol/configs/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash"]
