@@ -6,7 +6,7 @@ MAINTAINER Dwedia
 
 USER root
 
-RUN apk add --no-cache git ansible kubectl vim bash curl openssl ca-certificates && rm -rf /var/cache/apk/*
+RUN apk add --no-cache bash bash-completion git helm kubectl vim curl openssl ca-certificates && rm -rf /var/cache/apk/*
 
 RUN curl -sL https://talos.dev/install | sh
 
@@ -22,4 +22,5 @@ WORKDIR /kubecontrol
 STOPSIGNAL sigkill
 
 #ENTRYPOINT ["/kubecontrol/configs/entrypoint.sh"]
-ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/sleep","infinity"]
