@@ -6,7 +6,7 @@ MAINTAINER Dwedia
 
 USER root
 
-RUN apk add --no-cache bash bash-completion git helm kubectl vim curl openssl ca-certificates && rm -rf /var/cache/apk/*
+RUN apk add --no-cache bash bash-completion git helm kubectl kubectl-bash-completion vim curl openssl ca-certificates && rm -rf /var/cache/apk/*
 
 RUN curl -sL https://talos.dev/install | sh
 
